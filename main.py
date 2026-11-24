@@ -1,16 +1,38 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from movies import add_movie, show_movies, delete_movie
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+movies = []
+halls = []
+sessions = []
+bookings = []
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def main():
+    while True:
+        print("\n===== CINEMA MANAGEMENT =====")
+        print("1. Добавить фильм")
+        print("2. Показать фильмы")
+        print("3. Удалить фильм")
+        print("0. Выход")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        choice = input("Выберите действие: ")
+
+        if choice == "1":
+            add_movie(movies)
+
+        elif choice == "2":
+            show_movies(movies)
+
+        elif choice == "3":
+            delete_movie(movies)
+
+        elif choice == "0":
+            print("Программа завершена!")
+            break
+
+        else:
+            print("Неверный выбор!")
+
+
+if __name__ == "__main__":
+    main()
